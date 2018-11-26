@@ -99,10 +99,10 @@
 		5223EED421A79B26003246E5 /* Hotdog */ = {
 			isa = PBXGroup;
 			children = (
-				5223EF0321A79BFB003246E5 /* DataModel */,
 				5223EED521A79B26003246E5 /* AppDelegate.swift */,
-				5223EED721A79B26003246E5 /* ViewController.swift */,
-				5223EED921A79B26003246E5 /* Main.storyboard */,
+				5223EF0321A79BFB003246E5 /* DataModel */,
+				5223EF0721AC55D6003246E5 /* Controller */,
+				5223EF0621AC55CC003246E5 /* View */,
 				5223EEDC21A79B2C003246E5 /* Assets.xcassets */,
 				5223EEDE21A79B2C003246E5 /* LaunchScreen.storyboard */,
 				5223EEE121A79B2C003246E5 /* Info.plist */,
@@ -134,6 +134,22 @@
 				5223EF0421A79C35003246E5 /* Inceptionv3.mlmodel */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		5223EF0621AC55CC003246E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5223EED921A79B26003246E5 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5223EF0721AC55D6003246E5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5223EED721A79B26003246E5 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

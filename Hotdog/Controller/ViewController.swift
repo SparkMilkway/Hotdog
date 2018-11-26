@@ -13,6 +13,7 @@ import Vision
 class ViewController: UIViewController {
 
     @IBOutlet var photoDisplayImageView: UIImageView!
+    @IBOutlet weak var itemIdentifierLabel: UILabel!
     
     let imagePicker = UIImagePickerController()
     
@@ -28,6 +29,24 @@ class ViewController: UIViewController {
     func detect(with image: CIImage) {
         // try? will create an optional value containing resources.
         guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else {fatalError("Fail to create model")}
+        let request = VNCoreMLRequest(model: model) { (completeRequest, error) in
+            guard let results = completeRequest.results as? [VNClassificationObservation] else {
+                fatalError("Fail to convert request results into VNClassificationObservation")
+            }
+            if let firstResult = results.first {
+                let stringIdentifier = firstResult.identifier
+                
+                print(stringIdentifier)
+                self.itemIdentifierLabel.text = "This item could be \(stringIdentifier)"
+            }
+        }
+        let handler = VNImageRequestHandler(ciImage: image)
+        do {
+            try handler.perform([request])
+        }catch {
+            print(error)
+        }
+        
         
     }
 
@@ -49,6 +68,8 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             guard let ciimage = CIImage(image: pickedImage) else {
                 fatalError("Could not convert to CIImage")
             }
+            detect(with: ciimage)
+            
         }
         
         imagePicker.dismiss(animated: true, completion: nil)

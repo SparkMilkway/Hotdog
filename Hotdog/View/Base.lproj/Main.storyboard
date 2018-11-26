@@ -21,13 +21,41 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y0T-f8-Hld">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
+                            <visualEffectView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y1S-We-JlL">
+                                <rect key="frame" x="10" y="64" width="355" height="80"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2vc-sg-vgV">
+                                    <rect key="frame" x="0.0" y="0.0" width="355" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Zy4-gc-VE3" userLabel="Identifier">
+                                            <rect key="frame" x="8" y="8" width="339" height="64"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Zy4-gc-VE3" firstAttribute="top" secondItem="2vc-sg-vgV" secondAttribute="top" constant="8" id="H4N-6M-2wK"/>
+                                        <constraint firstAttribute="bottom" secondItem="Zy4-gc-VE3" secondAttribute="bottom" constant="8" id="Kws-Z2-uUY"/>
+                                        <constraint firstAttribute="trailing" secondItem="Zy4-gc-VE3" secondAttribute="trailing" constant="8" id="R0Z-xU-Qp1"/>
+                                        <constraint firstItem="Zy4-gc-VE3" firstAttribute="leading" secondItem="2vc-sg-vgV" secondAttribute="leading" constant="8" id="VGe-Uj-mpi"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="89Z-u7-UDk"/>
+                                </constraints>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="y1S-We-JlL" firstAttribute="top" secondItem="VGx-m2-U5d" secondAttribute="top" id="9of-bl-mx0"/>
                             <constraint firstItem="Y0T-f8-Hld" firstAttribute="top" secondItem="VGx-m2-U5d" secondAttribute="top" id="GI4-lp-QUY"/>
                             <constraint firstItem="Y0T-f8-Hld" firstAttribute="leading" secondItem="VGx-m2-U5d" secondAttribute="leading" id="Q36-Gz-PpR"/>
+                            <constraint firstItem="VGx-m2-U5d" firstAttribute="trailing" secondItem="y1S-We-JlL" secondAttribute="trailing" constant="10" id="iI5-jL-fQN"/>
                             <constraint firstItem="VGx-m2-U5d" firstAttribute="bottom" secondItem="Y0T-f8-Hld" secondAttribute="bottom" id="iLh-xC-mRo"/>
                             <constraint firstItem="VGx-m2-U5d" firstAttribute="trailing" secondItem="Y0T-f8-Hld" secondAttribute="trailing" id="iPx-xE-BDy"/>
+                            <constraint firstItem="y1S-We-JlL" firstAttribute="leading" secondItem="VGx-m2-U5d" secondAttribute="leading" constant="10" id="mJv-Z7-yVU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VGx-m2-U5d"/>
                     </view>
@@ -39,6 +67,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="itemIdentifierLabel" destination="Zy4-gc-VE3" id="hhE-cB-Er3"/>
                         <outlet property="photoDisplayImageView" destination="Y0T-f8-Hld" id="6c5-ed-pvb"/>
                     </connections>
                 </viewController>
