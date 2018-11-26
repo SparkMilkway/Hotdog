@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     }
     
     func detect(with image: CIImage) {
-        
+        // try? will create an optional value containing resources.
         guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else {fatalError("Fail to create model")}
         
     }
